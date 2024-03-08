@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "3008:3008"
+    volumes:
+      - .:/usr/src/app
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
